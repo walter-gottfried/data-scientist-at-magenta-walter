@@ -187,6 +187,11 @@ description = "decrypt secrets with SOPS and AGE"
 cmd = "pixi run -e ci-basics ./scripts/git_clean_local_branches.sh"
 description = "cleanup local non used branches"
 
+[tool.pixi.dependencies]
+psycopg2-binary = ">=2.9.10,<3"
+ydata-profiling = ">=4.16.0,<5"
+plotly = "*"
+
 [tool.ruff]
 exclude = [
   ".git",
