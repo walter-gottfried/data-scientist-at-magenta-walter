@@ -121,7 +121,7 @@ dagster-dbt = ">=0.25.11,<0.26"
 dagster-duckdb = ">=0.25.11,<0.26"
 dagster-duckdb-polars = ">=0.25.11,<0.26"
 dagster-duckdb-pandas = ">=0.25.11,<0.26"
-scikit-learn = "==1.5.2"
+scikit-learn = ">=1.5.2,<1.7.3"
 xgboost = ">=2.1.2,<3"
 seaborn = ">=0.13.2,<0.14"
 code_location_interview = { path = "./src/code_location_interview", editable = true }
@@ -191,6 +191,8 @@ description = "cleanup local non used branches"
 psycopg2-binary = ">=2.9.10,<3"
 ydata-profiling = ">=4.16.0,<5"
 plotly = "*"
+pytest = "*"
+imbalanced-learn = "*"
 
 [tool.ruff]
 exclude = [

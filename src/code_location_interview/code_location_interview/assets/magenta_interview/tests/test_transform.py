@@ -1,7 +1,7 @@
 import pandas as pd
-from code_location_interview.assets.magenta_interview.transformation import summarize_customer_interactions
+from code_location_interview.assets.magenta_interview.transform import summarize_customer_interactions, add_remaining_binding_flag
 
-def test_summarize_customer_interactions_real_types():
+def test_summarize_customer_interactions():
     # Sample data
     data = {
         'customer_id': [1, 1, 2, 2, 3, 3],
@@ -45,3 +45,20 @@ def test_summarize_customer_interactions_real_types():
     # n total = 4+1=5, min_days_since_last = min(3,15)=3
     assert pivot.loc[3, 'sum_n'].item() == 5, "Incorrect sum_n for customer 3"
     assert pivot.loc[3, 'min_days_since_last'].item() == 3, "Incorrect min_days_since_last for customer 3"
+
+
+def test_add_remaining_binding_flag():
+    # Prepare sample data
+    df = pd.DataFrame({
+        "remaining_binding_days": [10, 0, -5, 2]
+    })
+    
+    # Run function
+    result = add_remaining_binding_flag(df)
+    
+    # Expected output
+    expected = [1, 0, 0, 1]
+    
+    # Assertions
+    assert "has_remaining_binding_days" in result.columns
+    assert result["has_remaining_binding_days"].tolist() == expected
