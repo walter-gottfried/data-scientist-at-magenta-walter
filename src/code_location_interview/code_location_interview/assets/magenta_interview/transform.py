@@ -176,6 +176,42 @@ def transform_data(
         aggregated_usage_info
     )
 
+    dtype_map = {
+    "rating_account_id": "int64",
+    "customer_id": "object",
+    "age": "int64",
+    "contract_lifetime_days": "int64",
+    "remaining_binding_days": "int64",
+    "has_special_offer": "int64",
+    "is_magenta1_customer": "int64",
+    "available_gb": "float64",
+    "gross_mrc": "float64",
+    "smartphone_brand": "category",
+    "has_remaining_binding_days": "int64",
+    "days_since_last_produkte&services-tarifdetails": "float64",
+    "days_since_last_produkte&services-tarifwechsel": "float64",
+    "days_since_last_prolongation": "float64",
+    "days_since_last_rechnungsanfragen": "float64",
+    "n_produkte&services-tarifdetails": "float64",
+    "n_produkte&services-tarifwechsel": "float64",
+    "n_prolongation": "float64",
+    "n_rechnungsanfragen": "float64",
+    "min_days_since_last": "float64",
+    "sum_n": "float64",
+    "leftover_data_gb_mean": "float64",
+    "leftover_data_gb_std": "float64",
+    "leftover_data_gb_min": "float64",
+    "leftover_data_gb_max": "float64",
+    "used_gb_mean": "float64",
+    "used_gb_std": "float64",
+    "used_gb_min": "float64",
+    "used_gb_max": "float64",
+    "has_used_roaming_sum": "int64",
+    "has_done_upselling": "int64",
+}
+
+    merged_data = merged_data.astype(dtype_map)
+
     return merged_data  
 
 # ------------------------------

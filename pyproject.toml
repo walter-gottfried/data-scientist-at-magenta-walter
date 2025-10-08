@@ -193,6 +193,7 @@ ydata-profiling = ">=4.16.0,<5"
 plotly = "*"
 pytest = "*"
 imbalanced-learn = "*"
+shap = ">=0.48.0,<0.49"
 
 [tool.ruff]
 exclude = [

@@ -2,7 +2,7 @@ import os
 import pickle
 
 def load_artifact(targ_file:str):
-    dir = "../tmpapt6bri_/storage/"
+    dir = "../tmp2izhtjdl/storage/"
     targ_path = os.path.join(dir,targ_file)
 
     with open(targ_path,'rb') as fp:
