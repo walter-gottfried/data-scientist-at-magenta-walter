@@ -1,6 +1,9 @@
 import pandas as pd
 from code_location_interview.assets.magenta_interview.transform import summarize_customer_interactions, add_remaining_binding_flag
 
+#add testing for some of the functions in transform.py to demonstrate
+#in a real-world scenario, more comprehensive tests would be needed (for every non-trivial function)
+
 def test_summarize_customer_interactions():
     # Sample data
     data = {

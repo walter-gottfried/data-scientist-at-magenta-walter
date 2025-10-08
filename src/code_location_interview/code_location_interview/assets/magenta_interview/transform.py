@@ -1,5 +1,8 @@
 import pandas as pd 
 from dagster import asset
+#create functions for each transformation step to make testing easier and code more modular
+#in a real-world scenario, more error handling and logging would be needed
+
 def summarize_customer_interactions(customer_interactions: pd.DataFrame) -> pd.DataFrame:
     """
     Creates a pivot table summarizing customer interactions by type/subtype,
@@ -111,7 +114,7 @@ def prepare_merged_data(
     """
 
     # --- Create copies to avoid modifying original data ---
-    # could be solved more elegantly by flattening columns in the function that creates them but it works for now
+    # could be solved more elegantly by flattening columns in the function that creates them but it works
     core_copy = core_data.copy(deep=True)
     interactions_copy = customer_interactions_pivot.copy(deep=True)
     usage_copy = aggregated_usage_info.copy(deep=True)
